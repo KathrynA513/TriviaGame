@@ -23,36 +23,37 @@ $(document).ready(function gamePlay() {
 
     }
 
-   
-    
-    function eval (){
-      
-      var correct = correct1 + correct2 + correct3
+    var correct = 0 
 
-    if ($("#Question1").prop("checked", true) && $("#Question2").prop("checked", true) && $("#Question3").prop("checked", true)){
-      console.log(correct)
-      }
+    function eval (){
+
     
+      
     
+    $("#Question1 input[type='radio']"). click(function(){
     var radioValue1 = $("input[name='q1']:checked"). val()
       if (radioValue1 === 1) {
-        var correct1 = 0
-        correct1  ++
+        correct ++ 
         } 
-    
+    })
 
+      $("#Question2 input[type='radio']"). click(function(){
     var radioValue2 = $("input[name='q2']:checked"). val(); 
       if (radioValue2 === 0) {
-        var correct2 = 0
-         correct2  ++
+         correct ++ 
        } 
-   
+       })
+
+        $("#Question3 input[type='radio']"). click(function(){
     var radioValue3 = $("input[name='q3']:checked"). val();
         if (radioValue3 === 3) {
-        var correct3 = 0
-        correct3 ++
+        correct ++ 
        }
-       
+
+       if ($("#Question1").prop("checked", true) && $("#Question2").prop("checked", true) && $("#Question3").prop("checked", true)){
+          console.log(correct)
+          }
+      }) 
    }
    
     eval();
